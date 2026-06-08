@@ -1,0 +1,51 @@
+.LandingPage {
+    position: relative;
+    width: 100%;
+}
+
+.marquee {
+    font-family: 'Silkscreen', monospace;
+    width: 100%;
+    overflow: hidden;
+    background: var(--green);
+    border-top: 1px solid var(--yellow);
+    border-bottom: 1px solid var(--yellow);
+    padding: 1rem 0;
+}
+
+.marqueeTrack {
+    display: inline-flex;
+    white-space: nowrap;
+    animation: marquee-scroll 40s linear infinite;
+}
+
+.marqueeItem {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0 2rem;
+    font-size: 0.95rem;
+    letter-spacing: 0.05em;
+
+    &:nth-child(odd) {
+        color: var(--orange);
+    }
+
+    &:nth-child(even) {
+        color: var(--yellow);
+    }
+}
+
+.star {
+    color: inherit;
+}
+
+.slash {
+    color: #fff;
+    margin-left: 0.75rem;
+}
+
+@keyframes marquee-scroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+}
