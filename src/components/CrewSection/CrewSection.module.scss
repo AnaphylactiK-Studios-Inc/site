@@ -1,0 +1,54 @@
+.crewMembers {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 2rem;
+
+    .crewCard {
+        display: flex;
+        flex-direction: column;
+        background-color: var(--dark-green);
+        border: 1px solid var(--yellow-25);
+        padding: 1rem;
+        max-height: 480px;
+        gap: 0.5rem;
+    }
+    
+    span, h3 {
+        font-family: 'Silkscreen', monospace;
+        color: var(--yellow-25);
+    }
+
+    p {
+        margin: 0;
+    }
+
+    .number {
+        color: var(--orange);
+    }
+
+    .heading {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .avatar {
+        border: 1px solid var(--yellow-25);
+        width: auto;
+    }
+
+    .name {
+        font-weight: normal;
+        color: white;
+        margin: 0;
+    }
+
+    .roles {
+        color: var(--yellow-25);
+    }
+
+    .divider {
+        height: 1px;
+        border-bottom: 1px dashed var(--yellow-25);
+        margin: 1rem 0;
+    }
+}

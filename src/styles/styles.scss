@@ -4,6 +4,7 @@
   --white: #FFFFFF;
   --cream: #BDBC8E;
   --yellow: #FFD148;
+  --yellow-25: color-mix(in srgb, var(--yellow) 25%, transparent);
   --orange: #DD7123;
   --green: #132816;
   --dark-green: #152117;
@@ -12,10 +13,6 @@
 
 html {
   scroll-behavior: smooth;
-  /* Gentle "proximity" snap: only pulls into alignment when the user is
-     already near a section start — never traps them or blocks scrolling past.
-     If the navbar ever gets a solid background, set scroll-padding-top to its
-     height so sections snap below it instead of under it. */
   scroll-snap-type: y proximity;
 }
 
@@ -32,14 +29,15 @@ body {
     url('../assets/images/bg-texture.png'),
     linear-gradient(
       180deg,
-      #152117 0%,
-      #000701 40%,
-      #132816 80%,
+      var(--dark-green) 0%,
+      #000701 30%,
+      var(--green) 70%,
+      var(--dark-green) 80%,
       #000701 99%
     );
   background-repeat: repeat, no-repeat;
   background-size: auto, cover;
-  background-attachment: fixed, fixed;      /* both pinned to the viewport */
+  // background-attachment: fixed, fixed;      /* both pinned to the viewport */
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -55,9 +53,6 @@ section {
  * UTILITIES
  * =============================================================================
  */
-/* Inline accent color — wrap text in <span class="accent">…</span>.
-   Reads the current accent from --accent so the whole site can be re-themed
-   from one place; defaults to orange. */
 .orange {
   color: var(--orange);
 }

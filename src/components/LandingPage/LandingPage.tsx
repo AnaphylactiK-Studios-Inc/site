@@ -4,6 +4,7 @@ import '../../styles/styles.scss';
 import Navbar from '../Navbar/Navbar';
 import HeroSection from '../HeroSection/HeroSection';
 import GamesSection from '../GamesSection/GamesSection';
+import CrewSection from '../CrewSection/CrewSection';
 
 
 const marqueeItems = [
@@ -39,6 +40,11 @@ const LandingPage: FC<LandingPageProps> = () => (
 
     {/* Games */}
     <GamesSection />
+
+    {/* Crew Section */}
+    <CrewSection />
+
+    {/* Footer */}
   </div>
 );
 
