@@ -1,13 +1,17 @@
 import styles from './HeroSection.module.scss';
 import FaultyTerminal from './FaultyTerminal';
+import logoFull from '../../assets/images/logo/logo-full.svg';
 import type { FC } from 'react';
+
+// fIu1_Z.png lives in public/, so reference it through the configured base path.
+const heroBackground = `${import.meta.env.BASE_URL}fIu1_Z.png`;
 
 interface HeroSectionProps {}
 
 const HeroSection: FC<HeroSectionProps> = () => (
   <div className={styles.HeroSection} id="home">
     <div className={styles.terminal}>
-      <img src="public\fIu1_Z.png" className={styles.background} alt="" />
+      <img src={heroBackground} className={styles.background} alt="" />
       <FaultyTerminal
         scale={1.5}
         gridMul={[2, 1]}
@@ -28,7 +32,7 @@ const HeroSection: FC<HeroSectionProps> = () => (
         brightness={0.6}
       />
       <div className={styles.heading}>
-        <img className={styles.logo} src="src/assets/images/logo/logo-full.svg" alt="AnaphylactiK Logo" />
+        <img className={styles.logo} src={logoFull} alt="AnaphylactiK Logo" />
       </div>
     </div>
     </div>
