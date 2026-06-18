@@ -1,14 +1,17 @@
 nav {
+    --accent: var(--yellow);
+
     position: sticky;
     top: 0;
     z-index: 10;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
     align-items: center;
     padding: 1.5rem 2rem;
     background-color: var(--dark-green);
-    border-bottom: 1px solid var(--yellow);
+    border-bottom: 1px solid var(--accent);
     color: #fff;
+    transition: border-color 0.4s ease, background-color 0.4s ease;
 }
 
 a {
@@ -26,11 +29,35 @@ ul {
     font-size: 0.8rem;
 }
 
-.logo {
+.navLinks a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--yellow-50);
+    transition: color 0.3s ease;
+}
 
+.navLinks a:hover {
+    color: var(--yellow);
+}
+
+.navLinks a.active {
+    color: var(--accent);
+}
+
+.marker {
+    color: var(--accent);
+    flex-shrink: 0;
+}
+
+.logo {
+    width: 2rem;
+    height: auto;
+    justify-self: start;
 }
 
 .playButton {
+    justify-self: end;
     padding: 0.5rem 1rem;
     background-color: #fff;
     color: #000;
@@ -38,4 +65,3 @@ ul {
     border-radius: 4px;
     cursor: pointer;
 }
-

@@ -4,6 +4,7 @@
   --white: #FFFFFF;
   --cream: #BDBC8E;
   --yellow: #FFD148;
+  --yellow-50: color-mix(in srgb, var(--yellow) 50%, transparent);
   --yellow-25: color-mix(in srgb, var(--yellow) 25%, transparent);
   --orange: #DD7123;
   --green: #132816;
@@ -14,6 +15,25 @@
 html {
   scroll-behavior: smooth;
   scroll-snap-type: y proximity;
+}
+
+/*
+ * Respect users who prefer reduced motion: collapse animations/transitions and
+ * disable smooth scrolling. Durations are near-zero (not 0) so transitionend
+ * events still fire — the lightbox relies on one to unmount on close.
+ */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 /*

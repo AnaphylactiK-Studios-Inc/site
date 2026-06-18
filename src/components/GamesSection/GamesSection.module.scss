@@ -1,5 +1,6 @@
 section {
     min-height: 50vh;
+    border-bottom: 1px solid var(--yellow-25);
 }
 
 .content {
@@ -16,7 +17,7 @@ section {
 }
 
 h2 {
-    font-size: 3rem;
+    font-size: 4rem;
     line-height: 0.9;
     text-align: left;
     text-transform: uppercase;
@@ -26,8 +27,281 @@ h2 {
 
 p {
     color: var(--cream);
-    font-size: 1.2rem;
+    font-size: 1.25rem;
     line-height: 1.3;
     text-align: left;
     margin-right: 8rem;
+}
+
+.boxes {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border: 1px solid var(--yellow-50);
+    background-color: var(--dark-green);
+    gap: 0;
+
+    li {
+        border-right: 1px solid var(--yellow-50);
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    li:last-child {
+        border-right: none;
+    }
+
+    h3 {
+        font-family: 'Silkscreen', monospace;
+        font-weight: normal;
+        color: var(--cream);
+        margin: 0;
+        font-size: 1rem;
+    }
+    p {
+        margin: 0;
+        font-family: 'AeroMatics Display', sans-serif;
+        font-weight: normal;
+        color: var(--white);
+        text-transform: uppercase;
+    }
+}
+
+.buttons {
+    display: flex;
+    width: 100%;
+    gap: 1rem;
+}
+
+.playBtn {
+    background-color: var(--orange);
+    color: var(--white);
+    padding: 0.75rem 1rem;
+    font-family: 'Silkscreen', monospace;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+
+    svg {
+        font-size: 1.4rem;
+        margin-bottom: 2px;
+    }
+}
+
+.devLogBtn {
+    background-color: var(--dark-green);
+    border: 1px solid var(--yellow);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    font-family: 'Silkscreen', monospace;
+}
+
+
+.trailer {
+    margin-bottom: 1rem;
+}
+
+/*
+ * =============================================================================
+ * GALLERY CAROUSEL
+ * =============================================================================
+ */
+.gallery {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    margin-left: auto;
+    gap: 1rem;
+}
+
+.viewport {
+    position: relative;
+    border: 1px solid var(--yellow);
+    background-color: var(--black);
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+}
+
+.slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.slideActive {
+    opacity: 1;
+}
+
+.navBtn,
+.expandBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--yellow);
+    background-color: color-mix(in srgb, var(--black) 60%, transparent);
+    color: var(--yellow);
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+
+    &:hover {
+        background-color: var(--yellow);
+        color: var(--black);
+    }
+}
+
+.topBar {
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    display: flex;
+    align-items: stretch;
+    gap: 0.5rem;
+    width: calc(100% - 1.5rem);
+    justify-content: space-between;
+}
+
+.label {
+    display: flex;
+    align-items: center;
+    padding: 0 0.75rem;
+    border: 1px solid var(--yellow);
+    background-color: color-mix(in srgb, var(--black) 60%, transparent);
+    color: var(--yellow);
+    font-family: 'Silkscreen', monospace;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+}
+
+.expandBtn {
+    width: 2.25rem;
+    height: 2.25rem;
+    flex-shrink: 0;
+    font-size: 1.25rem;
+}
+
+.navBtn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2.5rem;
+    height: 2.5rem;
+    font-family: 'Silkscreen', monospace;
+    font-size: 1.75rem;
+    line-height: 1;
+    padding-bottom: 4px;
+}
+
+.prev {
+    left: 0.75rem;
+}
+
+.next {
+    right: 0.75rem;
+}
+
+.indexBox {
+    position: absolute;
+    bottom: 0.75rem;
+    right: 0.75rem;
+    padding: 0.4rem 0.75rem;
+    border: 1px solid var(--yellow);
+    background-color: color-mix(in srgb, var(--black) 60%, transparent);
+    color: var(--yellow);
+    font-family: 'Silkscreen', monospace;
+    font-size: 0.8rem;
+}
+
+/*
+ * =============================================================================
+ * LIGHTBOX
+ * =============================================================================
+ */
+.lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background-color: color-mix(in srgb, var(--black) 90%, transparent);
+
+    opacity: 0;
+    transition: opacity 0.25s ease;
+
+    .lightboxInner {
+        transform: scale(0.92);
+        transition: transform 0.25s ease;
+    }
+}
+
+.lightboxOpen {
+    opacity: 1;
+
+    .lightboxInner {
+        transform: scale(1);
+    }
+}
+
+.lightboxInner {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    max-width: 90vw;
+    max-height: 85vh;
+
+    img {
+        max-width: 100%;
+        max-height: 85vh;
+        object-fit: contain;
+        border: 1px solid var(--yellow);
+    }
+
+    .navBtn {
+        position: static;
+        transform: none;
+        flex-shrink: 0;
+    }
+}
+
+.closeBtn {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 1px solid var(--yellow);
+    background-color: transparent;
+    color: var(--yellow);
+    font-size: 1.75rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+
+    &:hover {
+        background-color: var(--yellow);
+        color: var(--black);
+    }
+}
+
+.counter {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Silkscreen', monospace;
+    font-size: 0.9rem;
+    color: var(--cream);
 }
