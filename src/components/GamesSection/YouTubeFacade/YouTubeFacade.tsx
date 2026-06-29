@@ -34,7 +34,11 @@ const YouTubeFacade: FC<YouTubeFacadeProps> = ({ id, title = 'YouTube video' }) 
       }}
     >
       <span className={styles.label}>Trailer</span>
-      <span className={styles.playBtn} aria-hidden="true">▶</span>
+      <span className={styles.playBtn} aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M22 11v2h-1v1h-1v1h-2v1h-2v1h-1v1h-2v1h-2v1h-1v1H8v1H6v1H3v-1H2V2h1V1h3v1h2v1h2v1h1v1h2v1h2v1h1v1h2v1h2v1h1v1z"></path>
+          </svg>
+        </span>
     </button>
   );
 };

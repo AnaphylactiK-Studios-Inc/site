@@ -21,11 +21,74 @@ export const CrewMembers: CrewMemberInterface[] = [
         imageUrl: "https://example.com/madeline.jpg",
         links: ["https://madelahn.com"]
     },
+    // {
+    //     name: "Celina",
+    //     role: ["Co-Founder", "Developer"],
+    //     bio: "",
+    //     imageUrl: "https://example.com/celina.jpg",
+    //     links: []
+    // },
     {
         name: "Jayden",
         role: ["Developer"],
         bio: "Jayden’s first exposure to how immersive a game could be was when he played LocoRoco 2 when he was just a child. Ever since then, Jayden was inspired by many games throughout his childhood and teenage years. There were so many game worlds out there, created by so many developers, with so many aspects to consider throughout development. It was his wish to create his own unique game world. Fast forward to today, Jayden has made several games of his own, each with their own distinct charm. But he still dreams of creating the perfect game to present to the world. Some of Jayden’s favourite games include Demon Bluff, Cult of the Lamb, Chants of Senaar, A Dance of Fire and Ice, Just Shapes and Beats, and Death and Taxes. But Jacksmith from the age of Flash games will always hold a special place in his heart.",
         imageUrl: "https://example.com/jayden.jpg",
         links: ["https://akata-ryuuko.itch.io "]
+    },
+    {
+        name: "Raffaela",
+        role: ["Co-Founder", "Developer"],
+        bio: "",
+        imageUrl: "https://example.com/celina.jpg",
+        links: []
+    },
+    {
+        name: "Daniel",
+        role: ["Co-Founder", "Developer"],
+        bio: "",
+        imageUrl: "https://example.com/celina.jpg",
+        links: []
+    },
+    {
+        name: "Avery",
+        role: ["Co-Founder", "Developer"],
+        bio: "",
+        imageUrl: "https://example.com/celina.jpg",
+        links: []
+    },
+    {
+        name: "Gigi",
+        role: ["Co-Founder", "Developer"],
+        bio: "",
+        imageUrl: "https://example.com/celina.jpg",
+        links: []
+    },
+    {
+        name: "Bruno",
+        role: ["Co-Founder", "Developer"],
+        bio: "",
+        imageUrl: "https://example.com/celina.jpg",
+        links: []
+    },
+    {
+        name: "Richard",
+        role: ["Co-Founder", "Developer"],
+        bio: "",
+        imageUrl: "https://example.com/celina.jpg",
+        links: []
+    },
+    {
+        name: "Ben",
+        role: ["Co-Founder", "Developer"],
+        bio: "",
+        imageUrl: "https://example.com/celina.jpg",
+        links: []
+    },
+    {
+        name: "Eric",
+        role: ["Co-Founder", "Developer"],
+        bio: "",
+        imageUrl: "https://example.com/celina.jpg",
+        links: []
     },
 ];

@@ -1,0 +1,33 @@
+.tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.6rem 1rem;
+    border: 1px solid var(--tag-color);
+    background-color: color-mix(in srgb, var(--black) 60%, transparent);
+    color: var(--tag-color);
+    font-family: 'Silkscreen', monospace;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.bullet {
+    width: 0.6em;
+    height: 0.6em;
+    background-color: var(--tag-color);
+    flex-shrink: 0;
+}
+
+.text {
+    line-height: 1;
+}
+
+// Colour variants.
+.yellow {
+    --tag-color: var(--yellow);
+}
+
+.orange {
+    --tag-color: var(--orange);
+}

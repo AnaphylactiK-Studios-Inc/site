@@ -5,6 +5,8 @@ import Navbar from '../Navbar/Navbar';
 import HeroSection from '../HeroSection/HeroSection';
 import GamesSection from '../GamesSection/GamesSection';
 import CrewSection from '../CrewSection/CrewSection';
+import Footer from '../Footer/Footer';
+import MissionSection from '../MissionSection.tsx/MissionSection';
 
 
 const marqueeItems = [
@@ -41,10 +43,14 @@ const LandingPage: FC<LandingPageProps> = () => (
     {/* Games */}
     <GamesSection />
 
+    {/* Mission Section */}
+    <MissionSection />
+
     {/* Crew Section */}
     <CrewSection />
 
     {/* Footer */}
+    <Footer />
   </div>
 );
 

@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState, type FC } from 'react';
 import styles from './GamesSection.module.scss';
 import YouTubeFacade from './YouTubeFacade/YouTubeFacade';
+import SectionTag from '../SectionTag/SectionTag';
 
 const screenshots = Object.entries(
   import.meta.glob('../../assets/images/pdk2003/pdk2003-screenshot-*.png', {
@@ -57,6 +58,7 @@ const GamesSection: FC = () => {
 
   return (
     <section className={styles.GamesSection} id="games">
+      <SectionTag number={1} label="Featured Game" variant="yellow" />
       <div className={styles.content}>
         <div className={styles.leftCol}>
          <h2>Peanut & Dreadnought Killer <span className="orange">2003</span></h2>
@@ -126,11 +128,8 @@ const GamesSection: FC = () => {
                   onClick={openLightbox}
                   aria-label="Expand screenshot"
                 >
-                  <svg width="1em" height="1em" viewBox="0 0 24 24" aria-hidden="true">
-                    <path
-                      fill="currentColor"
-                      d="M9 3H3v6h2V5h4zm12 0h-6v2h4v4h2zM5 15H3v6h6v-2H5zm16 0h-2v4h-4v2h6z"
-                    />
+                  <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M9 20v3H2v-1H1v-7h3v5zM9 1v3H4v5H1V2h1V1zm14 14v7h-1v1h-7v-3h5v-5zm0-13v7h-3V4h-5V1h7v1z"></path>
                   </svg>
                 </button>
               </div>
@@ -143,7 +142,9 @@ const GamesSection: FC = () => {
                     onClick={prev}
                     aria-label="Previous screenshot"
                   >
-                    ‹
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                      <path fill="currentColor" d="M11 13h1v1h1v1h1v1h1v1h1v1h1v1h-1v1h-1v-1h-1v-1h-1v-1h-1v-1h-1v-1h-1v-1H9v-1H8v-2h1v-1h1V9h1V8h1V7h1V6h1V5h1V4h1v1h1v1h-1v1h-1v1h-1v1h-1v1h-1v1h-1z"></path>
+                    </svg>
                   </button>
                   <button
                     type="button"
@@ -151,7 +152,9 @@ const GamesSection: FC = () => {
                     onClick={next}
                     aria-label="Next screenshot"
                   >
-                    ›
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                      <path fill="currentColor" d="M16 11v2h-1v1h-1v1h-1v1h-1v1h-1v1h-1v1H9v1H8v-1H7v-1h1v-1h1v-1h1v-1h1v-1h1v-1h1v-2h-1v-1h-1V9h-1V8H9V7H8V6H7V5h1V4h1v1h1v1h1v1h1v1h1v1h1v1h1v1z"></path>
+                    </svg>
                   </button>
                 </>
               )}

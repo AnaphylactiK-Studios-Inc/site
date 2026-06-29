@@ -198,17 +198,29 @@ p {
     width: 2.5rem;
     height: 2.5rem;
     font-family: 'Silkscreen', monospace;
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     line-height: 1;
     padding-bottom: 4px;
+
+    svg {
+        margin-top: 2px;
+    }
 }
 
 .prev {
     left: 0.75rem;
+
+    svg {
+        margin-right: 5px;
+    }
 }
 
 .next {
     right: 0.75rem;
+
+    svg {
+        margin-right: 1px;
+    }
 }
 
 .indexBox {

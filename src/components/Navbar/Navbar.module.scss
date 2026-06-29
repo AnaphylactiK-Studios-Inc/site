@@ -58,10 +58,20 @@ ul {
 
 .playButton {
     justify-self: end;
-    padding: 0.5rem 1rem;
-    background-color: #fff;
-    color: #000;
+    padding: 0.75rem 1rem;
+    background-color: var(--orange);
+    color: var(--white);
     border: none;
-    border-radius: 4px;
     cursor: pointer;
+    gap: 1rem;
+
+    a {
+        display: inline-flex;
+        gap: 0.5rem;
+        align-items: center;
+    }
+
+    svg {
+        font-size: 0.8rem;
+    }
 }
