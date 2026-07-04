@@ -93,7 +93,17 @@ $gap: 2rem;
 
     .back {
         transform: rotateY(180deg);
+    }
+
+    // The heading/name/roles above stay put; only this region scrolls. min-height:
+    // 0 lets the flex child actually shrink so overflow kicks in.
+    .backBody {
+        flex: 1;
+        min-height: 0;
         overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
     }
 
     span, h3 {
@@ -119,6 +129,14 @@ $gap: 2rem;
         width: 100%;
         aspect-ratio: 1 / 1;
         object-fit: cover;
+        // Centre + recolour the alt text shown when the image fails to load.
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: var(--cream);
+        font-family: 'Silkscreen', monospace;
+        font-size: 0.85rem;
     }
 
     .name {
@@ -129,6 +147,33 @@ $gap: 2rem;
 
     .roles {
         color: var(--yellow-25);
+    }
+
+    // Social icons: a horizontal row that inherits the crew colour and brightens
+    // to yellow on hover/focus.
+    .links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+            display: flex;
+        }
+
+        a {
+            display: inline-flex;
+            color: var(--cream);
+            font-size: 1.5rem;
+            transition: color 0.2s ease;
+
+            &:hover,
+            &:focus-visible {
+                color: var(--yellow);
+            }
+        }
     }
 
     .bio {

@@ -2,6 +2,7 @@ import { useState, type FC } from 'react';
 import styles from './CrewSection.module.scss';
 import { CrewMembers, type CrewMemberInterface } from './CrewMembers';
 import SectionTag from '../SectionTag/SectionTag';
+import { getSocial } from './SocialLink';
 
 interface CrewCardProps {
     member: CrewMemberInterface;
@@ -70,22 +71,30 @@ const CrewCard: FC<CrewCardProps> = ({ member, index }) => {
                         ))}
                     </ul>
                     <div className={styles.divider}></div>
-                    <p className={styles.bio}>{member.bio}</p>
-                    <div className={styles.divider}></div>
-                    <ul className={styles.links}>
-                        {member.links.map((link) => (
-                            <li key={link}>
-                                <a
-                                    href={link}
-                                    target="_blank"
-                                    rel="noreferrer"
-                                    onClick={(e) => e.stopPropagation()}
-                                >
-                                    {link}
-                                </a>
-                            </li>
-                        ))}
-                    </ul>
+                    {/* Only the bio and below scroll; the heading/name/roles stay fixed */}
+                    <div className={styles.backBody}>
+                        <p className={styles.bio}>{member.bio}</p>
+                        <div className={styles.divider}></div>
+                        <ul className={styles.links}>
+                            {member.links.map((link) => {
+                                const social = getSocial(link);
+                                return (
+                                    <li key={link}>
+                                        <a
+                                            href={link}
+                                            target="_blank"
+                                            rel="noreferrer"
+                                            aria-label={social.label}
+                                            title={social.label}
+                                            onClick={(e) => e.stopPropagation()}
+                                        >
+                                            {social.icon}
+                                        </a>
+                                    </li>
+                                );
+                            })}
+                        </ul>
+                    </div>
                 </div>
             </div>
         </article>

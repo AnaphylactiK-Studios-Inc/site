@@ -6,7 +6,7 @@ import HeroSection from '../HeroSection/HeroSection';
 import GamesSection from '../GamesSection/GamesSection';
 import CrewSection from '../CrewSection/CrewSection';
 import Footer from '../Footer/Footer';
-import MissionSection from '../MissionSection.tsx/MissionSection';
+import MissionSection from '../MissionSection/MissionSection';
 
 
 const marqueeItems = [
@@ -17,9 +17,7 @@ const marqueeItems = [
   'CURRENTLY WORKING ON: RACCOON VACUUM GAME',
 ];
 
-interface LandingPageProps {}
-
-const LandingPage: FC<LandingPageProps> = () => (
+const LandingPage: FC = () => (
   <div className={styles.LandingPage}>
     {/* Navbar */}
     <Navbar />

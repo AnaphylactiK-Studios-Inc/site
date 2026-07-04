@@ -28,6 +28,44 @@
     }
 }
 
+.footerRight {
+    display: flex;
+    gap: 4rem;
+
+    h3 {
+        color: var(--yellow);
+        font-family: 'Silkscreen', monospace;
+        font-size: 1.1rem;
+    }
+    ul {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    li {
+        color: var(--cream);
+        list-style: none;
+        font-weight: normal;
+        font-family: 'AeroMatics', sans-serif;
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+        a {
+            width: 100%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 3rem;
+            svg {
+                margin-bottom: -3px;
+            }
+        }
+
+    }
+    li:hover {
+        cursor: pointer;
+    }
+}
+
 .copyright {
     border-top: 1px dashed var(--yellow-50);
     margin-top: 2rem;

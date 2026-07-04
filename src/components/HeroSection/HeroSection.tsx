@@ -6,9 +6,7 @@ import type { FC } from 'react';
 // fIu1_Z.png lives in public/, so reference it through the configured base path.
 const heroBackground = `${import.meta.env.BASE_URL}fIu1_Z.png`;
 
-interface HeroSectionProps {}
-
-const HeroSection: FC<HeroSectionProps> = () => (
+const HeroSection: FC = () => (
   <div className={styles.HeroSection} id="home">
     <div className={styles.terminal}>
       <img src={heroBackground} className={styles.background} alt="" />
